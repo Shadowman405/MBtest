@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseCore
+import FirebaseFirestore
 
 class ViewController: UIViewController {
     
@@ -15,7 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var registerBtn: UIButton!
     
-    
+    private var isLogedIn = false
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,9 @@ class ViewController: UIViewController {
         
         loginBtn.layer.cornerRadius = 15
         registerBtn.layer.cornerRadius = 15
+        if FirebaseApp.app() == nil {
+            FirebaseApp.configure()
+        }
     }
 
 }
