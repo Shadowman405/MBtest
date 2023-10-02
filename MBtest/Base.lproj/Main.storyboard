@@ -8,11 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="kpn-sX-Jtj">
             <objects>
-                <viewController id="hmO-7Z-pOc" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2Lm-DA-Zpb">
+                <viewController id="hmO-7Z-pOc" customClass="RegisterViewController" customModule="MBtest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Lm-DA-Zpb" customClass="Reg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="5ew-8g-0MW"/>
