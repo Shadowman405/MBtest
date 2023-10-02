@@ -8,10 +8,27 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var emailTxtField: UITextField!
+    @IBOutlet weak var passwordTxtField: UITextField!
+    
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var registerBtn: UIButton!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setupUI()
+    }
+    
+    private func setupUI() {
+        emailTxtField.keyboardType = UIKeyboardType.emailAddress
+        passwordTxtField.isSecureTextEntry = true
+        
+        loginBtn.layer.cornerRadius = 15
+        registerBtn.layer.cornerRadius = 15
     }
 
 }
