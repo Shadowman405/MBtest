@@ -33,7 +33,17 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func registerTaped(_ sender: Any) {
-        
+        if let email = emailTxtFld.text, let password = passwordTxtFld.text{
+            firebaseManager.createUser(email: email, password: password) { success in
+                if success != true {
+                    self.showAlert(title: "Error", alertMessage: "Please enter correct rmail and password")
+                } else {
+                    self.showAlert(title: "Done", alertMessage: "User succesfully created")
+                    self.emailTxtFld.text = ""
+                    self.passwordTxtFld.text = ""
+                }
+            }
+        }
     }
     
     private func showAlert(title: String, alertMessage: String){
