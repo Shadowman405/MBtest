@@ -37,7 +37,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func showAlert(title: String, alertMessage: String){
-        
+        let alert = UIAlertController(title: title, message: alertMessage, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
     }
 
 }
