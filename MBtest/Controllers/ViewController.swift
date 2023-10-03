@@ -28,6 +28,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        emailTxtField.text = ""
+        passwordTxtField.text = ""
+    }
+    
     private func setupUI() {
         emailTxtField.keyboardType = UIKeyboardType.emailAddress
         passwordTxtField.isSecureTextEntry = true
@@ -47,7 +52,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         guard let email = emailTxtField.text, let password = passwordTxtField.text else { return}
         firebaseManager.signIn(email: email, pass: password) { success in
             if success == true {
-                
+                self.performSegue(withIdentifier: "toBoard", sender: nil)
             } else {
                 let alert = UIAlertController(title: "Error", message: "Wrong credentials", preferredStyle: .alert)
                 let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
