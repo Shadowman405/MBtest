@@ -17,6 +17,7 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupUI()
     }
     
     private func setupUI(){
