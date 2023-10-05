@@ -110,41 +110,49 @@
                         <outlet property="loginBtn" destination="mRA-kS-bQw" id="hR8-d3-C5s"/>
                         <outlet property="passwordTxtField" destination="JbF-KL-3z9" id="ZWk-gL-QgJ"/>
                         <outlet property="registerBtn" destination="hgt-b1-VjM" id="Sia-AI-PCZ"/>
-                        <segue destination="4Aa-n6-XVW" kind="show" identifier="toBoard" id="4ye-iX-NPU"/>
+                        <segue destination="Tq8-LM-9AL" kind="show" identifier="toBoard" id="7Yd-OW-PhL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="901.52671755725191" y="3.5211267605633805"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="gKy-Jg-GVy">
+        <!--View Controller-->
+        <scene sceneID="1qY-Z7-bMY">
             <objects>
-                <tableViewController id="4Aa-n6-XVW" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="H0N-AW-C9W">
+                <viewController id="Tq8-LM-9AL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rgF-Ab-ePf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Oct 2023" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycc-fg-CQh">
+                                <rect key="frame" x="125" y="103" width="143" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wo-Lf-Jbx">
+                                <rect key="frame" x="67" y="103" width="50" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.left.circle.fill" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gav-KK-Yzk">
+                                <rect key="frame" x="276" y="103" width="50" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.right.circle.fill" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sK2-N4-Bj9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="yqz-2i-hDA">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yqz-2i-hDA" id="8aW-Qa-P9p">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="4Aa-n6-XVW" id="9lm-WH-2Ko"/>
-                            <outlet property="delegate" destination="4Aa-n6-XVW" id="I9P-kg-7bQ"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="4Tm-5c-fPM"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9ld-zL-mDJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZDO-U7-HGr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mtN-zd-1HU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1724" y="4"/>
+            <point key="canvasLocation" x="1809.9236641221373" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pRN-0p-eMk">
@@ -166,6 +174,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.left.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="arrowshape.turn.up.right.circle.fill" catalog="system" width="128" height="123"/>
         <image name="logo" width="500" height="480"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
