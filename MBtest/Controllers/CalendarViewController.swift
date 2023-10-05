@@ -19,7 +19,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
         super.viewDidLoad()
         
         setCellsView()
-
+        setMonthView()
     }
     
     func setCellsView(){
@@ -29,6 +29,23 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
         let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         flowLayout.itemSize = CGSize(width: width, height: height)
         
+    }
+    
+    func setMonthView(){
+        let daysInMonth = CalendarHelper().daysInMonth(date: selectedDate)
+        let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
+        let startingSpaces = CalendarHelper().weekDay(date: firstDayOfMonth)
+        
+        var count = 1
+        
+        while(count <= 42) {
+            if(count <= startingSpaces || count - startingSpaces > daysInMonth)
+            {
+                totalSquares.append("")
+            } else {
+                totalSquares.append(String(count - startingSpaces))
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
