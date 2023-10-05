@@ -45,7 +45,12 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
             } else {
                 totalSquares.append(String(count - startingSpaces))
             }
+            
+            count += 1
         }
+        
+        monthLbl.text = CalendarHelper().mothString(date: selectedDate) + " " + CalendarHelper().yearString(date: selectedDate)
+        collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
