@@ -60,10 +60,17 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
   
     @IBAction func previousMonthTaped(_ sender: Any) {
+        selectedDate = CalendarHelper().minusMonth(date: selectedDate)
+        setMonthView()
     }
     
     @IBAction func nextMonthTaped(_ sender: Any) {
+        selectedDate = CalendarHelper().plusMonth(date: selectedDate)
+        setMonthView()
     }
     
+    override open var shouldAutorotate: Bool {
+        return false
+    }
     
 }
