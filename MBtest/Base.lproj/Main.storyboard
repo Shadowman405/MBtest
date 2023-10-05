@@ -138,12 +138,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.right.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="nextMonthTaped:" destination="Tq8-LM-9AL" eventType="touchUpInside" id="TND-BR-JK7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wo-Lf-Jbx">
                                 <rect key="frame" x="67" y="103" width="50" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.left.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="previousMonthTaped:" destination="Tq8-LM-9AL" eventType="touchUpInside" id="Ue4-P4-Iay"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="ChD-xx-SUN">
                                 <rect key="frame" x="0.0" y="146" width="392" height="20.333333333333343"/>
@@ -222,6 +228,9 @@
                                                 <constraint firstItem="mQp-v4-URw" firstAttribute="centerX" secondItem="dPd-oK-IZE" secondAttribute="centerX" id="o85-7x-L6Z"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="dayOfMonth" destination="mQp-v4-URw" id="nC8-Jb-6J5"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -230,6 +239,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZDO-U7-HGr"/>
+                    <connections>
+                        <outlet property="collectionView" destination="I6p-b8-rve" id="VB8-Ec-G4f"/>
+                        <outlet property="monthLbl" destination="Ycc-fg-CQh" id="4TN-La-D0O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mtN-zd-1HU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
