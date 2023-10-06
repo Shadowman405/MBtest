@@ -12,7 +12,7 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var collectionView: UICollectionView!
     
     var selectedDate = Date()
-    var totalSquares = [String]()
+    var totalSquares = [Date]()
     
 
     override func viewDidLoad() {
@@ -33,22 +33,6 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
     func setMonthView(){
         totalSquares.removeAll()
         
-        let daysInMonth = CalendarHelper().daysInMonth(date: selectedDate)
-        let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
-        let startingSpaces = CalendarHelper().weekDay(date: firstDayOfMonth)
-        
-        var count = 1
-        
-        while(count <= 42) {
-            if(count <= startingSpaces || count - startingSpaces > daysInMonth)
-            {
-                totalSquares.append("")
-            } else {
-                totalSquares.append(String(count - startingSpaces))
-            }
-            
-            count += 1
-        }
         
         monthLbl.text = CalendarHelper().mothString(date: selectedDate) + " " + CalendarHelper().yearString(date: selectedDate)
         collectionView.reloadData()
@@ -60,7 +44,8 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "calCell", for: indexPath) as! CalendarCell
-        cell.dayOfMonth.text = totalSquares[indexPath.item]
+        let date = totalSquares[indexPath.item]
+        cell.dayOfMonth.text = String(CalendarHelper().dayOfMonth(date: date))
         
         return cell
     }
