@@ -74,11 +74,15 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     //MARK: - TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return Event().eventsForDate(date: selectedDate).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID") as! EventCell
+        let event = Event().eventsForDate(date: selectedDate)[indexPath.row]
+        cell.eventLbl.text = event.name
+        
+        return cell
     }
     
     @IBAction func nextWeekTaped(_ sender: Any) {
