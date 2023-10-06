@@ -541,7 +541,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="DrL-cE-KzK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="DrL-cE-KzK" customClass="EventCell" customModule="MBtest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="392" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DrL-cE-KzK" id="IRT-eu-zov">
@@ -557,8 +557,15 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="eventLbl" destination="fK8-ht-7sK" id="5hh-w2-pg3"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8Qs-n9-Nx8" id="l5o-Xk-iF6"/>
+                                    <outlet property="delegate" destination="8Qs-n9-Nx8" id="Ru2-U7-5eu"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gvm-3Q-k0t"/>
@@ -589,7 +596,7 @@
         <!--Event Edit-->
         <scene sceneID="QOR-ol-6GJ">
             <objects>
-                <viewController id="9Qn-b8-hBe" sceneMemberID="viewController">
+                <viewController id="9Qn-b8-hBe" customClass="EventEditViewController" customModule="MBtest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KM5-Wl-iza">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -608,7 +615,23 @@
                         <viewLayoutGuide key="safeArea" id="IJ2-cC-A0n"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Event Edit" id="Isl-d3-nC5"/>
+                    <navigationItem key="navigationItem" title="Event Edit" id="Isl-d3-nC5">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="aHk-uJ-3x4">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Vwr-tP-xJ1">
+                                <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                            </button>
+                            <connections>
+                                <action selector="saveTaped:" destination="9Qn-b8-hBe" id="yCy-UF-Tet"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="te1-GZ-eSN" id="EQF-E6-QTp"/>
+                        <outlet property="eventName" destination="hzX-0e-ReZ" id="AsM-C3-B5k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSG-b6-lY7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

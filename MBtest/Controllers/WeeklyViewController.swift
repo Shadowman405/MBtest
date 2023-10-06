@@ -7,11 +7,14 @@
 
 import UIKit
 
-class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+var selectedDate = Date()
+
+class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
+    
+    
     @IBOutlet weak var monthLbl: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var selectedDate = Date()
     var totalSquares = [Date]()
     
 
@@ -67,6 +70,15 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedDate = totalSquares[indexPath.item]
         collectionView.reloadData()
+    }
+    
+    //MARK: - TableView
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
     }
     
     @IBAction func nextWeekTaped(_ sender: Any) {

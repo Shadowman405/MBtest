@@ -12,7 +12,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var monthLbl: UILabel!
 
-    var selectedDate = Date()
+    //var selectedDate = Date()
     var totalSquares = [String]()
 
     override func viewDidLoad() {
