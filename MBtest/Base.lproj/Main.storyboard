@@ -549,7 +549,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fK8-ht-7sK">
-                                                    <rect key="frame" x="20" y="11" width="43" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="352" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -578,6 +578,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                                <connections>
+                                    <segue destination="9Qn-b8-hBe" kind="show" id="TIJ-he-IfF"/>
+                                </connections>
                             </button>
                             <connections>
                                 <segue destination="9Qn-b8-hBe" kind="show" id="KUR-IA-se6"/>
@@ -623,10 +626,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="saveTaped:" destination="9Qn-b8-hBe" eventType="touchUpInside" id="8vR-fP-tMP"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <action selector="saveTaped:" destination="9Qn-b8-hBe" id="yCy-UF-Tet"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -639,6 +642,9 @@
             <point key="canvasLocation" x="3417.5572519083967" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="KUR-IA-se6"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrowshape.turn.up.left.circle.fill" catalog="system" width="128" height="123"/>
         <image name="arrowshape.turn.up.right.circle.fill" catalog="system" width="128" height="123"/>
