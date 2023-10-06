@@ -14,6 +14,9 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var monthLbl: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     
     var totalSquares = [Date]()
     
@@ -22,6 +25,11 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
     }
     
     func setCellsView(){
@@ -33,7 +41,7 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         
     }
     
-    func setMonthView(){
+    func setWeekView(){
         totalSquares.removeAll()
         
         var current = CalendarHelper().sundayForDate(date: selectedDate)
@@ -47,6 +55,7 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         monthLbl.text = CalendarHelper().mothString(date: selectedDate) + " " + CalendarHelper().yearString(date: selectedDate)
         collectionView.reloadData()
+        tableView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -70,6 +79,7 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedDate = totalSquares[indexPath.item]
         collectionView.reloadData()
+        tableView.reloadData()
     }
     
     //MARK: - TableView
@@ -87,13 +97,13 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBAction func nextWeekTaped(_ sender: Any) {
         selectedDate = CalendarHelper().addDays(date: selectedDate, days: 7)
-        setMonthView()
+        setWeekView()
     }
     
     
     @IBAction func previousWeekTaped(_ sender: Any) {
         selectedDate = CalendarHelper().addDays(date: selectedDate, days: -7)
-        setMonthView()
+        setWeekView()
     }
     
     override open var shouldAutorotate: Bool {
