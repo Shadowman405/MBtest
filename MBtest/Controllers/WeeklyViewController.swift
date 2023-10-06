@@ -33,6 +33,14 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
     func setMonthView(){
         totalSquares.removeAll()
         
+        var current = CalendarHelper().sundayForDate(date: selectedDate)
+        let nextSunday = CalendarHelper().addDays(date: current, days: 7)
+        
+        while (current < nextSunday){
+            totalSquares.append(current)
+            current = CalendarHelper().addDays(date: current, days: 1)
+        }
+        
         
         monthLbl.text = CalendarHelper().mothString(date: selectedDate) + " " + CalendarHelper().yearString(date: selectedDate)
         collectionView.reloadData()
@@ -47,17 +55,28 @@ class WeeklyViewController: UIViewController, UICollectionViewDelegate, UICollec
         let date = totalSquares[indexPath.item]
         cell.dayOfMonth.text = String(CalendarHelper().dayOfMonth(date: date))
         
+        if(date == selectedDate) {
+            cell.backgroundColor = UIColor.systemGreen
+        } else {
+            cell.backgroundColor = UIColor.white
+        }
+        
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedDate = totalSquares[indexPath.item]
+        collectionView.reloadData()
+    }
+    
     @IBAction func nextWeekTaped(_ sender: Any) {
-        selectedDate = CalendarHelper().plusMonth(date: selectedDate)
+        selectedDate = CalendarHelper().addDays(date: selectedDate, days: 7)
         setMonthView()
     }
     
     
     @IBAction func previousWeekTaped(_ sender: Any) {
-        selectedDate = CalendarHelper().minusMonth(date: selectedDate)
+        selectedDate = CalendarHelper().addDays(date: selectedDate, days: -7)
         setMonthView()
     }
     

@@ -50,7 +50,7 @@ class CalendarHelper {
         return components.weekday! - 1
     }
     
-    fileprivate func addDays(date: Date, days: Int) -> Date {
+    func addDays(date: Date, days: Int) -> Date {
         return calendar.date(byAdding: .day,value: days, to: date)!
     }
     
@@ -62,7 +62,7 @@ class CalendarHelper {
             if(currentWeek == 1){
                 return current
             }
-            current = addDays(date: current, days: 1)
+            current = addDays(date: current, days: -1)
         }
         return current
     }
