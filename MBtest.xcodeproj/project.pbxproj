@@ -45,6 +45,7 @@
 		BF84C6B32ACF27C600C3BEDC /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF84C6B22ACF27C600C3BEDC /* CalendarCell.swift */; };
 		BF84C6B52ACF282500C3BEDC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF84C6B42ACF282500C3BEDC /* CalendarViewController.swift */; };
 		BF84C6B72ACF2B8900C3BEDC /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF84C6B62ACF2B8900C3BEDC /* CalendarHelper.swift */; };
+		BF84C6B92AD039C300C3BEDC /* WeeklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF84C6B82AD039C300C3BEDC /* WeeklyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		BF84C6B22ACF27C600C3BEDC /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		BF84C6B42ACF282500C3BEDC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		BF84C6B62ACF2B8900C3BEDC /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		BF84C6B82AD039C300C3BEDC /* WeeklyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 				BF84C6B02ACC9EC000C3BEDC /* RegisterViewController.swift */,
 				BF84C6B22ACF27C600C3BEDC /* CalendarCell.swift */,
 				BF84C6B42ACF282500C3BEDC /* CalendarViewController.swift */,
+				BF84C6B82AD039C300C3BEDC /* WeeklyViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				BF84C6B12ACC9EC000C3BEDC /* RegisterViewController.swift in Sources */,
 				BF84C6502ACB55CC00C3BEDC /* ViewController.swift in Sources */,
 				BF84C64C2ACB55CC00C3BEDC /* AppDelegate.swift in Sources */,
+				BF84C6B92AD039C300C3BEDC /* WeeklyViewController.swift in Sources */,
 				BF84C6B52ACF282500C3BEDC /* CalendarViewController.swift in Sources */,
 				BF84C64E2ACB55CC00C3BEDC /* SceneDelegate.swift in Sources */,
 			);
